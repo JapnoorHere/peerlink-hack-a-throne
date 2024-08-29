@@ -3,7 +3,6 @@
     import PostsSection from './PostsSection';
     import AddIcon from '@mui/icons-material/Add';
     import Box from '@mui/material/Box';
-    import Typography from '@mui/material/Typography';
     import Modal from '@mui/material/Modal';
     import { styled } from '@mui/material/styles';
     import Button from '@mui/material/Button';
@@ -56,7 +55,6 @@
         const handleClose = () => setOpen(false);
         const [form, setForm] = useState({});
         const [file, setFile] = useState(null);
-        const [preview, setPreview] = useState(null);
 
         const handleFormChange = (event) => {
             setForm({
