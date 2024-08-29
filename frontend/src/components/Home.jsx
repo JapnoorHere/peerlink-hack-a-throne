@@ -127,7 +127,6 @@
                         >
                             <Box sx={style}>
                                 <div className='flex flex-col gap-8'>
-                                    {preview && <img src={preview} alt="Preview" />}
                                     <Button
                                         component="label"
                                         role={undefined}
