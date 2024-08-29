@@ -4,7 +4,9 @@ const {signup,login,addpost,viewpost,profile,request,acceptreq,mentorlist,namere
 
 const app = exp();
 
-app.use(cors());
+app.use(cors({
+    origin: '*',
+}));
 app.use(exp.json());
 
 const routes = exp.Router();
