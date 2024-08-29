@@ -77,7 +77,7 @@ const Quiz = () => {
         setScore(calculatedScore);
     
         setTimeout(() => {
-            axios.post('http://localhost:4000/quiz', {
+            axios.post('https://peerlink-hack-a-throne.vercel.app/quiz', {
                 score: calculatedScore,
                 topic: topic,
                 totalScore: quizData.length,

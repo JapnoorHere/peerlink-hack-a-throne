@@ -81,7 +81,7 @@ const Signup = () => {
             toast.error('Password length should be more than 6');
         }
         else {
-            axios.post('http://localhost:4000/signup', {
+            axios.post('https://peerlink-hack-a-throne.vercel.app/signup', {
                 name: name,
                 email: email,
                 password: password,

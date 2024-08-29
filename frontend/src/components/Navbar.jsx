@@ -44,7 +44,7 @@ const Navbar = () => {
     const [mentorList, setMentorList] = useState();
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/${localStorage.getItem('id')}/profile/`).then((res) => {
+        axios.get(`https://peerlink-hack-a-throne.vercel.app/${localStorage.getItem('id')}/profile/`).then((res) => {
             setUserData(res.data.data);
             console.log(res.data.data);
         });
@@ -53,7 +53,7 @@ const Navbar = () => {
     useEffect(() => {
         if (userData.request?.length > 0) {
             Promise.all(userData.request.map(requestId =>
-                axios.get(`http://localhost:4000/${requestId}/profile/`)
+                axios.get(`https://peerlink-hack-a-throne.vercel.app/${requestId}/profile/`)
             )).then(responses => {
                 const names = responses.map(item => item.data.data.name);
                 setRequestsData(names);
@@ -65,7 +65,7 @@ const Navbar = () => {
 
 
     useEffect(() => {
-        axios.get('http://localhost:4000/mentorlist').then((res) => {
+        axios.get('https://peerlink-hack-a-throne.vercel.app/mentorlist').then((res) => {
             setMentorList(res.data.data);
         });
 
@@ -88,7 +88,7 @@ const Navbar = () => {
     };
 
     const handleMentorAccept = () => {
-        axios.post('http://localhost:4000/accept', {
+        axios.post('https://peerlink-hack-a-throne.vercel.app/accept', {
             acceptid: userData.request[0],
             userid: localStorage.getItem('id')
         }).then((res) => {
@@ -100,7 +100,7 @@ const Navbar = () => {
     }
 
     const chooseMentorButton = (mentorId) => {
-        axios.post('http://localhost:4000/request/', { reqid: mentorId, userid: localStorage.getItem('id') }).then((res) => {
+        axios.post('https://peerlink-hack-a-throne.vercel.app/request/', { reqid: mentorId, userid: localStorage.getItem('id') }).then((res) => {
             console.log(res);
         });
     }

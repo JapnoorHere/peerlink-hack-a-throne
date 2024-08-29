@@ -20,7 +20,7 @@ const LogIn = () => {
     console.log(form.email);
     console.log(form.password);
 
-    axios.post('http://localhost:4000/login',{
+    axios.post('https://peerlink-hack-a-throne.vercel.app/login',{
         email: form.email,
         password: form.password
     }).then((response)=>{
