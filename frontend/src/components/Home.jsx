@@ -17,7 +17,7 @@
         const [posts, setPosts] = useState([]);
 
         useEffect(() => {
-            axios.get('https://peerlink-hack-a-throne.vercel.app/viewpost').then((response) => {
+            axios.get('https://peerstoconnect-backend.vercel.app/viewpost').then((response) => {
                 if (response.data.msg === 'Posts fetched successfully') {
                     console.log(response.data.data);
                     setPosts(response.data.data);
@@ -72,7 +72,7 @@
             console.log(downloadURL);
             console.log(form.description);
 
-            axios.post(`https://peerlink-hack-a-throne.vercel.app/${localStorage.getItem('id')}/addpost`, {
+            axios.post(`https://peerstoconnect-backend.vercel.app/${localStorage.getItem('id')}/addpost`, {
                 img: downloadURL.toString(),
                 desc: form.description,
             }).then((response) => {

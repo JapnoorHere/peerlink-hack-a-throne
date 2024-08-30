@@ -12,19 +12,19 @@ const Profile = () => {
     
     useEffect(() => {
         console.log(user._id);
-        axios.get(`https://peerlink-hack-a-throne.vercel.app/${user._id}/profile/`).then((res) => {
+        axios.get(`https://peerstoconnect-backend.vercel.app/${user._id}/profile/`).then((res) => {
             setUserData(res.data.data);
         });
     }, [user._id]);
 
     const handleRequestForMentor = () => {
-        axios.post('https://peerlink-hack-a-throne.vercel.app/', { reqid: user._id, userid: localStorage.getItem('id') }).then((res) => {
+        axios.post('https://peerstoconnect-backend.vercel.app/', { reqid: user._id, userid: localStorage.getItem('id') }).then((res) => {
             console.log(res);
         });
     };
 
     useEffect(()=>{
-        axios.post(`https://peerlink-hack-a-throne.vercel.app/showquiz`,{
+        axios.post(`https://peerstoconnect-backend.vercel.app/showquiz`,{
             id: user._id
         }).then((res)=>{
             console.log(res.data.data.quiz);
